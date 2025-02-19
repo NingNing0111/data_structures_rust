@@ -56,7 +56,7 @@ mod tests {
     use super::ArrayStack;
 
     #[test]
-    fn test_queue_functionality() {
+    fn test_stack_functionality() {
         let mut array_stack: ArrayStack<usize> = ArrayStack::new();
 
         assert!(array_stack.is_empty());
