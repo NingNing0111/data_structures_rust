@@ -39,6 +39,13 @@ impl<T> Queue<T> {
     pub fn is_empty(&self) -> bool {
         0 == Self::size(&self)
     }
+
+    pub fn peek(&self) -> Option<&T> {
+        if Self::is_empty(&self) {
+            return None;
+        }
+        self.data.get(Self::size(&self) - 1)
+    }
 }
 
 #[cfg(test)]
