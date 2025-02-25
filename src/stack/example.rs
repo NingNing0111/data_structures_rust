@@ -12,30 +12,39 @@ fn test_leedcode_20() {
             return false;
         }
         let mut array_stack: ArrayStack<char> = ArrayStack::new();
+        let mut balance = true;
+        let chs = ['(', ')', '[', ']', '{', '}'];
         for c in s.chars() {
-            if c == '(' || c == '{' || c == '[' {
-                array_stack.push(c);
-            } else if c == ')' || c == '}' || c == ']' {
-                if array_stack.is_empty() {
-                    return false;
-                }
-                let peek_val = array_stack.peek().unwrap().clone();
-                if c == ')' && peek_val == '('
-                    || c == '}' && peek_val == '{'
-                    || c == ']' && peek_val == '['
-                {
-                    array_stack.pop();
-                } else {
-                    return false;
+            for i in 0..=2 {
+                if c == chs[2 * i] {
+                    array_stack.push(c);
+                } else if c == chs[2 * i + 1] {
+                    if array_stack.is_empty() {
+                        balance = false; // 不平衡
+                        break;
+                    }
+                    let peek_val = array_stack.peek().unwrap().clone();
+                    if chs[2 * i] == peek_val {
+                        array_stack.pop();
+                    } else {
+                        return false;
+                    }
                 }
             }
         }
-        array_stack.is_empty()
+        balance && array_stack.is_empty()
     }
 
     assert!(is_valid(String::from("")));
     assert!(is_valid(String::from("{{[]}}()(([[]])){}")));
     assert_eq!(is_valid(String::from("{{[]}}()(([[]])){}}")), false);
-
     assert_eq!(is_valid(String::from("(])")), false);
+    assert!(is_valid(String::from("()")));
+}
+
+#[test]
+fn test_loop() {
+    for i in 1..=3 {
+        println!("{}", i);
+    }
 }
