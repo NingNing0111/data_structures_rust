@@ -1,0 +1,8 @@
+#[cfg(test)]
+pub mod test {
+
+    pub fn function() {}
+
+    #[test]
+    fn test_p1() {}
+}
