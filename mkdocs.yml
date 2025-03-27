@@ -1,0 +1,143 @@
+site_name: PG Thihnker's Algorithm Note By Rust
+site_author: PG Thinker
+site_url: https://pgthinker.me
+
+theme:
+  name: material
+  font:
+    text: Bitter
+  icon:
+    logo: material/library-shelves
+    admonition:
+      <type>: material/file-alert-outline
+  favicon: images/favicon.ico
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: 暗色模式
+    - media: "(prefers-color-scheme: dark)"
+      primary: teal
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: 亮色模式
+  features:
+    - navigation.prune      # 导航修剪
+    # - navigation.instant #- header.autohide  #自动隐藏
+    - announce.dismiss #呈现可标记为由用户读取的临时公告，可以包含一个用于取消当前公告的按钮
+    - navigation.tracking #地址栏中的 URL 将自动更新为在目录中突出显示的活动锚点
+    - navigation.tabs #顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
+    - navigation.sections #启用部分后，顶级部分在边栏中呈现为1220px以上视口的组，但在移动设备上保持原样
+    - navigation.top # 返回顶部的按钮 在上滑时出现
+    - search.suggest # 搜索输入一些字母时推荐补全整个单词
+    - search.highlight # 搜索出的文章关键词加入高亮
+    - navigation.expand # 打开Tab时左侧目录全部展开
+    - navigation.indexes #启用节索引页后，可以将文档直接附加到节
+    - search.share #搜索分享按钮
+    - content.tabs.link
+  language: zh # 一些提示性的文字会变成中文
+  icon:
+    repo: fontawesome/brands/github #右上角图标
+repo_url: https://github.com/ningning0111 # 右上角点击跳转的链接
+repo_name: GitHub # 右上角的名字
+
+plugins:
+  - search
+
+# wiki
+copyright: 2022 - 2025 &emsp; copyright &copy; PG Thinker
+
+extra:
+  generator: false  #删除页脚显示“使用 MkDocs 材料制造”
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/2043393364
+    - icon: fontawesome/solid/paper-plane
+      link: mailto:<zdncode@gmail.com> #联系方式
+
+markdown_extensions:
+  - abbr
+  - attr_list
+  - admonition
+  - def_list
+  - footnotes
+  - md_in_html
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+  - pymdownx.smartsymbols
+  - pymdownx.tilde
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
+  - pymdownx.arithmatex:  # latex支持
+      generic: true
+  - toc:
+      permalink: true # 固定标题位置为当前位置
+  - pymdownx.highlight: # 代码块高亮
+      anchor_linenums: true
+      linenums: true # 显示行号
+      auto_title: true # 显示编程语言名称
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - markdown.extensions.toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
+      permalink: "\ue157"
+
+extra_javascript:
+  - static/js/mathjax-config.js
+  - static/js/mathjax.js
+  - static/js/extra.js
+  - static/js/tex-mml-chtml.js
+  # - static/js/backgroud.js
+
+extra_css:
+  - static/css/extra.css
+  - static/css/video.css
+
+
+nav:
+    - '概述' : 'index.md'
+    - 'LeetCode Hot 100':
+      - '概述': 'Hot100/index.md'
+      - '哈希': 
+        - '两数之和': 'Hot100/Hash/two-sum.md'
+        - '字母异位词分组': 'Hot100/Hash/group-anagrams.md'
+        - '最长连续子序列': 'Hot100/Hash/longest-consecutive-sequence.md'
+      - '双指针':
+        - '移动零': 'Hot100/TwoPointers/move-zeroes.md'
+        - '盛最多水的容器': 'Hot100/TwoPointers/container-with-most-water.md'
+        - '三数之和': 'Hot100/TwoPointers/three-sum.md'
+        - '接雨水': 'Hot100/TwoPointers/trapping-rain-water.md'
+    - '数据结构': 
+      - '链表': 'DataStruct/List/base.md'
+      - '栈': 'DataStruct/Stack/base.md'
+      - '队列': 'DataStruct/Queue/base.md'
+      - '树': 'DataStruct/Tree/base.md'
+      - '图': 'DataStruct/Map/base.md'
+    - '搜索篇':
+      - 'DFS': 'Search/DFS/base.md'
+      - 'BFS': 'Search/BFS/base.md'
+    - '动态规划':
+      - '概述': 'DP/index.md'
+      - '背包问题': 
+          - '4种背包模型' : 'DP/KnapsackProblem/背包问题.md'
+          - '例题' : 'DP/KnapsackProblem/背包问题例题.md'
+    - '数学':
+        - '快速幂': 'Math/Math_FastPower.md'
+
+    - '其它':
+        - '并查集' : 'Other/UnionFindSet.md'
