@@ -1,3 +1,7 @@
+---
+statistics: True
+---
+
 # 接雨水
 
 &emsp;LeetCode 上著名的一道双指针问题。

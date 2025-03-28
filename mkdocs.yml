@@ -45,6 +45,7 @@ repo_name: GitHub # 右上角的名字
 
 plugins:
   - search
+  - statistics
 
 # wiki
 copyright: 2022 - 2025 &emsp; copyright &copy; PG Thinker
@@ -56,6 +57,9 @@ extra:
       link: https://github.com/2043393364
     - icon: fontawesome/solid/paper-plane
       link: mailto:<zdncode@gmail.com> #联系方式
+  analytics:
+    provider: google
+    property: G-KXW0QJXF73
 
 markdown_extensions:
   - abbr
@@ -102,7 +106,6 @@ extra_javascript:
   - static/js/mathjax.js
   - static/js/extra.js
   - static/js/tex-mml-chtml.js
-  # - static/js/backgroud.js
 
 extra_css:
   - static/css/extra.css
@@ -122,6 +125,8 @@ nav:
         - '盛最多水的容器': 'Hot100/TwoPointers/container-with-most-water.md'
         - '三数之和': 'Hot100/TwoPointers/three-sum.md'
         - '接雨水': 'Hot100/TwoPointers/trapping-rain-water.md'
+      - '滑动窗口':
+        - '无重复字符的最长子串': 'Hot100/SlidingWindow/longest-substring-without-repeating-characters.md'
     - '数据结构': 
       - '链表': 'DataStruct/List/base.md'
       - '栈': 'DataStruct/Stack/base.md'
